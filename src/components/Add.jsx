@@ -21,7 +21,7 @@ function Add({setUploadVideoStatus}) { // state lifting  - destructuring
   //for link slicing and giving it to embed link
   const embedVideoLink=(e)=>{
     const {value} = e.target
-    console.log(value.slice(-11));
+    console.log(value.slice(-11));  //for slicing and getting last 11 characters
     const link =`https://www.youtube.com/embed/${value.slice(-11)}`
      setVideos({...Videos,embedLink:link})    }
   console.log(Videos);

@@ -25,6 +25,7 @@ function ViewCard({displayVideo,setDeleteVideoStatus}) {  //destructuring the da
         await addToHistory(videoDetails)
     }
 
+    //delete video 
 const removeVideo = async(id)=>{
     const response = await deleteAVideos(id) //from AllApi.js
     setDeleteVideoStatus(true) //changing the state as true after deleting a video or when we get a response //becoz the video is disappera after refreshing to avoid this situation 

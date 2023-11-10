@@ -10,7 +10,6 @@ export const uploadVideo = async (reqBody)=>{ //reqBody have the data from add.j
 }
 
 //get all uploaded videos
-
 export const getAllVideos = async()=>{
     
     return await commonAPI('GET',`${serverURL}/videos`,"")
