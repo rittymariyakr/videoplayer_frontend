@@ -10,11 +10,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import ViewCard from './ViewCard';
 function Category() {
 
+  //state to store category name value from input field
   const [categoryName, setCategoryName] = useState("")
+
   const [category , setCategory] = useState([])
 
-    const [show, setShow] = useState(false);
-
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -23,22 +24,23 @@ function Category() {
     console.log(categoryName);
     
     if(categoryName){  //if category is there
+      //creating a body to store categoryname and all videos belongs to that category
       let body = {
-        categoryName,
-        allVideos:[],
-  
+        categoryName, //categoryName:categoryName => categoryName
+        allVideos:[], // empty array for storing that particular category of videos
       }
-      //api call
-      const response = await addAllCategory(body)
+
+      //function call form allAPI
+      const response = await addAllCategory(body) //now the value  will be added to the db
       console.log(response);
 
-      if(response.status>+200 && response.status<300){
+      if(response.status>=200 && response.status<300){
         toast.success('Category Added Successfully')
         //state value is made null
         setCategoryName("")
         //close the modal
         handleClose()
-        //to automatic appearance of category withou refreshing
+        //to automatic appearance of category without refreshing the page
         allCategory()
       }
       else{

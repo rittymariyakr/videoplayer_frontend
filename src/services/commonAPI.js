@@ -1,6 +1,6 @@
 import axios from "axios"
 
-//configuration
+//axios configuration
 export const commonAPI = async (httpMethod,url,reqBody)=>{
     let reqConfig = {
         method: httpMethod,

@@ -6,12 +6,13 @@ import { serverURL } from "./serverURL"
 
 //upload video
 export const uploadVideo = async (reqBody)=>{ //reqBody have the data from add.jsx (ie, user infput from input field)
+    //return the response to Add.jsx component
     return await commonAPI('POST', `${serverURL}/videos`,reqBody )
 }
 
 //get all uploaded videos
 export const getAllVideos = async()=>{
-    
+    //return the response to View.jsx Component
     return await commonAPI('GET',`${serverURL}/videos`,"")
 }
 
@@ -31,7 +32,7 @@ export const getAllHistory = async()=>{
     return await commonAPI('GET',`${serverURL}/history`,"")
 }
 
-//api cal to delete history
+//api call to delete history
 export const deleteVideoHistory = async(id)=>{
     return await commonAPI('DELETE',`${serverURL}/history/${id}`, {})
 }
