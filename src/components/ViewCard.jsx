@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 import { addToHistory, deleteAVideos } from '../services/allAPI';
 
-function ViewCard({displayVideo, setDeleteVideoStatus}) {  //destructuring the data (displayVideo) from parent (View.jsx)
+function ViewCard({displayVideo, setDeleteVideoStatus, ispresent}) {  //destructuring the data (displayVideo) from parent (View.jsx)
 
     const [show, setShow] = useState(false);
 
@@ -53,9 +53,10 @@ const cardDrag = (e,id)=>{
                 <Card.Title className='d-flex justify-content-between align-items-center'>
                     <h6>{displayVideo.caption}</h6>
                     {/*1. functn call - if the removeVideo functn has any argumnet give it as call back functn */}
-                    <Button onClick={()=>removeVideo(displayVideo?.id)} className='btn btn-danger'><i class="fa-solid fa-trash-can"></i></Button>
-
-                    </Card.Title>
+                {!ispresent &&        
+                <Button onClick={()=>removeVideo(displayVideo?.id)} className='btn btn-danger'><i class="fa-solid fa-trash-can"></i></Button>
+                }                   
+ </Card.Title>
             </Card.Body>
         </Card>
 

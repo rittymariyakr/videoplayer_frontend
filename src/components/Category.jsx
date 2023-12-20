@@ -110,7 +110,7 @@ function Category() {
     <Row>
       <Col>
       {item?.allVideos.length>0?
-      item?.allVideos?.map(card=>(<ViewCard displayVideo={card}/>))
+      item?.allVideos?.map(card=>(<ViewCard displayVideo={card} ispresent={true}/>))
       : <p>Nothing to display</p>
       }
 
@@ -135,7 +135,7 @@ function Category() {
           <form className='border border-secondary p-3 rounded'>
           <Form.Label>Category Name</Form.Label>
          <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control onChange={(e)=>setCategoryName(e.target.value)} type="text" placeholder="Category Name" />
+                <Form.Control onChange={(e)=>setCategoryName(e.target.value)} type="text" placeholder="Category Name" autoComplete='off'/>
          </Form.Group>
          
           </form>

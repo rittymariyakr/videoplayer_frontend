@@ -76,16 +76,16 @@ function Add({ setUploadVideoStatus }) { // state lifting  - destructuring from 
           <form className='border border-secondary p-3 rounded'>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               {/*2. getting values from input box */}
-              <Form.Control onChange={(e) => setVideos({ ...Videos, id: e.target.value })} type="text" placeholder="Enter Video ID " />
+              <Form.Control onChange={(e) => setVideos({ ...Videos, id: e.target.value })} type="text" placeholder="Enter Video ID " autoComplete='off' />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control onChange={(e) => setVideos({ ...Videos, caption: e.target.value })} type="text" placeholder="Enter Video Caption" />
+              <Form.Control onChange={(e) => setVideos({ ...Videos, caption: e.target.value })} type="text" placeholder="Enter Video Caption" autoComplete='off'/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control onChange={(e) => setVideos({ ...Videos, url: e.target.value })} type="text" placeholder="Enter Video Image URL" />
+              <Form.Control onChange={(e) => setVideos({ ...Videos, url: e.target.value })} type="text" placeholder="Enter Video Image URL" autoComplete='off' />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control onChange={embedVideoLink} type="text" placeholder="Enter YouTube Video Link" />
+              <Form.Control onChange={embedVideoLink} type="text" placeholder="Enter YouTube Video Link" autoComplete='off' />
             </Form.Group>
           </form>
 
